@@ -14,9 +14,10 @@
 
 | Izvor | Status | Napomena |
 |---|---|---|
-| **Hotellook API (Travelpayouts)** | ✅ Besplatan uz registraciju | Keširane cene, 60 upita/min. Affiliate linkovi = zarada po rezervaciji. |
-| **Amadeus Hotel Search** | ✅ Besplatan tier | Isti nalog kao za letove. |
-| **Booking.com API** | ❌ Praktično nedostupan | Demand API samo za odobrene partnere; prijave za connectivity pauzirane. Affiliate program otvoren, ali bez pravog API-ja za male partnere. Skrejpovanje krši ToS — otpada. |
+| **Hotellook API** | ❌ UGAŠEN (okt 2025) | Brend zatvoren, API vraća 404 — potvrđeno testom 24.7.2026. |
+| **Amadeus Hotel Search** | ✅ Besplatan tier | Isti nalog kao za letove. **Glavni izvor hotelskih cena.** |
+| **Booking.com affiliate (kroz Travelpayouts)** | ⏳ Čeka odobrenje projekta | U TP katalogu, 3–5% provizije. Linkovi za zaradu, ne daje cene kroz API. Agoda (6%) i Expedia (1,35–3,6%) takođe u katalogu. |
+| **Booking.com Demand API** | ❌ Nedostupan malim partnerima | Skrejpovanje krši ToS — otpada. |
 
 ## Ključni zaključci
 
@@ -24,10 +25,10 @@
 2. **Ne poredimo se sa "cenom na Bookingu"** (pravno i tehnički klizavo) nego sa **prosečnom/istorijskom cenom** koju sami računamo iz keširanih podataka.
 3. **Diferencijacija:** paketna cena let+hotel iz regionalnih aerodroma (BEG/INI/TSR/SOF) + fleksibilna pretraga po budžetu — to veliki igrači ne rade dobro.
 
-## Šta korisnik (vlasnik projekta) treba da registruje
+## Status naloga (ažurirano 24.7.2026)
 
-1. **Travelpayouts nalog** — https://www.travelpayouts.com (besplatno; token na developers stranici)
-2. **Amadeus for Developers nalog** — https://developers.amadeus.com (besplatno; API key + secret za test okruženje)
+1. ✅ **Travelpayouts** — registrovan; projekat "Trip" (https://vukkoll-svg.github.io/trip/) povezan sa Aviasales programom. Token i marker u lokalnom `.env`. Flight Data API testiran i radi (BEG→BCN sept: 84 € povratna). Projekat na pregledu — kad prođe, povezati Booking.com i Agoda programe za hotele.
+2. ⬜ **Amadeus for Developers** — https://developers.amadeus.com (besplatno; API key + secret za test okruženje) — SLEDEĆI KORAK, treba za hotelske cene.
 
 ## Izvori
 
