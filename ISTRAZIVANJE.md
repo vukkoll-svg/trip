@@ -15,7 +15,8 @@
 | Izvor | Status | Napomena |
 |---|---|---|
 | **Hotellook API** | ❌ UGAŠEN (okt 2025) | Brend zatvoren, API vraća 404 — potvrđeno testom 24.7.2026. |
-| **Amadeus Hotel Search** | ✅ Besplatan tier | Isti nalog kao za letove. **Glavni izvor hotelskih cena.** |
+| **Amadeus Self-Service** | ❌ UGAŠEN (17.7.2026) | Ceo self-service program zatvoren, ostao samo Enterprise (ugovori). Otpada i za letove i za hotele. |
+| **Nuitée Connect / liteAPI** | ✅ Besplatan sandbox, bez kartice | 3M+ hotela, live cene i rezervacije; revenue-share model. **Glavni izvor hotelskih cena.** Reg: connect.nuitee.com |
 | **Booking.com affiliate (kroz Travelpayouts)** | ⏳ Čeka odobrenje projekta | U TP katalogu, 3–5% provizije. Linkovi za zaradu, ne daje cene kroz API. Agoda (6%) i Expedia (1,35–3,6%) takođe u katalogu. |
 | **Booking.com Demand API** | ❌ Nedostupan malim partnerima | Skrejpovanje krši ToS — otpada. |
 
@@ -28,7 +29,8 @@
 ## Status naloga (ažurirano 24.7.2026)
 
 1. ✅ **Travelpayouts** — registrovan; projekat "Trip" (https://vukkoll-svg.github.io/trip/) povezan sa Aviasales programom. Token i marker u lokalnom `.env`. Flight Data API testiran i radi (BEG→BCN sept: 84 € povratna). Projekat na pregledu — kad prođe, povezati Booking.com i Agoda programe za hotele.
-2. ⬜ **Amadeus for Developers** — https://developers.amadeus.com (besplatno; API key + secret za test okruženje) — SLEDEĆI KORAK, treba za hotelske cene.
+2. ❌ **Amadeus for Developers** — self-service ugašen 17.7.2026, ne registrovati.
+3. ⬜ **Nuitée Connect (liteAPI)** — https://connect.nuitee.com/register (besplatan sandbox bez kartice) — SLEDEĆI KORAK, za hotelske cene.
 
 ## Izvori
 
