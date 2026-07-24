@@ -4,25 +4,33 @@ Aplikacija koja za zadati budžet i mesec pokazuje najjeftinije kombinacije
 **let + hotel** iz regionalnih aerodroma (BEG, INI, TSR, SOF), sa poređenjem
 u odnosu na prosečnu tržišnu cenu.
 
-## Trenutno stanje: prototip (faza 0)
+## Trenutno stanje: faza 1 — prave cene ✅
 
-Statička web aplikacija sa probnim (mock) podacima — demonstrira UX i logiku:
+- `server.js` — Node backend (bez zavisnosti): kombinuje Aviasales letove
+  i liteAPI hotele, keš 6h, retry + ograničen paralelizam
+- `destinations.js` — lista destinacija (IATA + grad za hotele)
+- `index.html`, `styles.css`, `app.js` — frontend; ako backend nije dostupan
+  (npr. na GitHub Pages), automatski pada na mock podatke iz `data.js`
 
-- `index.html`, `styles.css`, `app.js` — interfejs i logika
-- `data.js` — mock podaci (destinacije, cene, sezonski koeficijenti)
+Pokretanje: napravi `.env` (vidi ispod), pa `node server.js` → http://localhost:3000
 
-Pokretanje: `npx http-server -p 4173 .` pa otvori http://localhost:4173
+```
+TRAVELPAYOUTS_TOKEN=...
+TRAVELPAYOUTS_MARKER=...
+LITEAPI_KEY=...
+```
 
 ## Plan razvoja
 
 ### Faza 1 — pravi podaci (1–2 nedelje)
 - [x] Registracija Travelpayouts + projekat povezan sa Aviasales (24.7.2026)
-- [ ] Registracija Nuitée Connect / liteAPI (za hotelske cene — Hotellook i Amadeus self-service su ugašeni)
-- [ ] Node.js backend (Express) sa adapterima za izvore podataka
-- [ ] Aviasales Data API → najjeftiniji letovi po destinaciji/mesecu (token testiran ✅)
-- [ ] liteAPI hotel search → najjeftiniji hoteli za iste datume
+- [x] Registracija Nuitée Connect / liteAPI (sandbox key, 24.7.2026)
+- [x] Node backend sa adapterima za izvore podataka (`server.js`)
+- [x] Aviasales Data API → najjeftiniji letovi (povratni + fallback na 2 jednosmerna)
+- [x] liteAPI hotel search → najjeftiniji hotel za datume leta (svih 12 destinacija radi)
+- [x] Keširanje u memoriji (6h TTL) + retry + max 4 paralelna poziva
 - [ ] Booking.com/Agoda affiliate linkovi kad Travelpayouts odobri projekat
-- [ ] Keširanje odgovora (SQLite) da ne trošimo API limite
+- [ ] liteAPI production key (sandbox → prod) pre javnog puštanja
 
 ### Faza 2 — poređenje cena i popusti
 - [ ] Dnevno snimanje cena u bazu → istorijski prosek po ruti/mesecu

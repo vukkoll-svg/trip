@@ -94,6 +94,11 @@ input[type="range"] { accent-color: var(--accent); margin-top: 12px; }
   border-radius: 20px;
 }
 
+.disclaimer.live {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
 .results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
