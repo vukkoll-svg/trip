@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip — najjeftinija putovanja iz tvog grada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="logo">✈️ Trip</div>
+      <h1>Gde možeš da otputuješ za svoj budžet?</h1>
+      <p class="subtitle">Let + hotel u jednoj ceni, upoređeno sa prosekom tržišta</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-panel" id="search-panel">
+      <div class="field">
+        <label for="origin">Polazak iz</label>
+        <select id="origin">
+          <option value="BEG" selected>Beograd (BEG)</option>
+          <option value="INI">Niš (INI)</option>
+          <option value="TSR">Temišvar (TSR)</option>
+          <option value="SOF">Sofija (SOF)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="month">Mesec putovanja</label>
+        <select id="month">
+          <option value="8">Avgust 2026</option>
+          <option value="9" selected>Septembar 2026</option>
+          <option value="10">Oktobar 2026</option>
+          <option value="11">Novembar 2026</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="nights">Broj noći</label>
+        <select id="nights">
+          <option value="3" selected>3 noći</option>
+          <option value="5">5 noći</option>
+          <option value="7">7 noći</option>
+        </select>
+      </div>
+      <div class="field field-budget">
+        <label for="budget">Budžet: <strong id="budget-label">400 €</strong></label>
+        <input type="range" id="budget" min="100" max="1000" step="25" value="400">
+      </div>
+    </section>
+
+    <section class="results-meta">
+      <span id="results-count"></span>
+      <span class="disclaimer">Prototip — prikazani podaci su probni (mock)</span>
+    </section>
+
+    <section class="results" id="results"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Trip prototip · cene uključuju povratni let i hotel za 2 osobe · poređenje sa prosečnom cenom za izabrani period</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

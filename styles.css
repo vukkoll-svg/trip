@@ -1,0 +1,204 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --ink: #1c2333;
+  --muted: #64708a;
+  --accent: #2563eb;
+  --accent-dark: #1e40af;
+  --green: #16a34a;
+  --green-bg: #dcfce7;
+  --amber: #b45309;
+  --amber-bg: #fef3c7;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(28, 35, 51, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #38bdf8 100%);
+  color: #fff;
+  padding: 48px 24px 72px;
+}
+
+.hero-inner { max-width: 960px; margin: 0 auto; }
+
+.logo { font-size: 1.3rem; font-weight: 700; margin-bottom: 24px; }
+
+.hero h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
+
+.subtitle { margin-top: 8px; opacity: 0.85; font-size: 1.05rem; }
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px 64px; }
+
+.search-panel {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+  margin-top: -40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.field select,
+.field input[type="range"] {
+  width: 100%;
+}
+
+.field select {
+  padding: 10px 12px;
+  border: 1px solid #d4dae6;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.field-budget strong { color: var(--accent); }
+
+input[type="range"] { accent-color: var(--accent); margin-top: 12px; }
+
+.results-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 28px 4px 14px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.disclaimer {
+  font-size: 0.78rem;
+  background: var(--amber-bg);
+  color: var(--amber);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.deal-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(28, 35, 51, 0.14);
+}
+
+.deal-banner {
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px 18px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.savings-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.deal-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+
+.deal-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.deal-line span:last-child { color: var(--ink); font-weight: 600; }
+
+.deal-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-top: 1px solid #e8ecf4;
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.deal-total .label { font-size: 0.85rem; color: var(--muted); }
+
+.deal-total .price { font-size: 1.5rem; font-weight: 800; color: var(--ink); }
+
+.market-compare {
+  font-size: 0.82rem;
+  color: var(--green);
+  background: var(--green-bg);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.market-compare s { color: var(--muted); }
+
+.cta {
+  display: block;
+  text-align: center;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  padding: 11px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.cta:hover { background: var(--accent-dark); }
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--muted);
+}
+
+.empty-state .emoji { font-size: 2.4rem; margin-bottom: 10px; }
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
